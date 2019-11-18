@@ -17,7 +17,7 @@ response <- GET('https://pokeapi.co/api/v2/pokemon')
 
 # Set path for working directory.
 # Put files on desktop in a folder called ECO6416
-wd_path <- 'C:/Users/francis_surroca/Documents/ECO6416/Research Project'
+wd_path <- '<Your local folder>'
 
 # Set the working directory to this path. 
 setwd(wd_path)
