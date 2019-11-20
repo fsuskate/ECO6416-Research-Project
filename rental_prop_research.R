@@ -9,7 +9,6 @@ library('httr')
 library('plumber')
 
 Sys.setenv(TZ='America/New_York')
-response <- GET('https://pokeapi.co/api/v2/pokemon')
 
 ##################################################
 # Setting the Parameters
@@ -17,7 +16,7 @@ response <- GET('https://pokeapi.co/api/v2/pokemon')
 
 # Set path for working directory.
 # Put files on desktop in a folder called ECO6416
-wd_path <- '<Your local folder>'
+wd_path <- 'C:/Users/francis_surroca/Documents/ECO6416/Research Project'
 
 # Set the working directory to this path. 
 setwd(wd_path)
@@ -30,11 +29,18 @@ getwd()
 ##################################################
 rental_prop_data <- read.csv('rental_prop_data.csv')
 
+rental_prop_data[, 'Heated.Area.SquareRoot'] <- sqrt(rental_prop_data[, 'Heated.Area'])
+
+rental_prop_data[, 'Heated.Area.SquareRoot'] <- sqrt(rental_prop_data[, 'Heated.Area'])
+
 # Inspect the contents.
 summary(rental_prop_data)
 
 hist(rental_prop_data[, 'Median.Household.Income'])
 hist(rental_prop_data[, 'Current.Price'])
+
+plot(rental_prop_data[, 'Current.Price'])
+lines(rental_prop_data[, 'Median.Household.Income'])
 
 lm_model_1 <- lm(data = rental_prop_data, 
                     formula =  Current.Price ~ Median.Household.Income + Heated.Area )
@@ -43,7 +49,11 @@ summary(lm_model_1)
 
 lm_full_model <- lm(data = rental_prop_data, 
                  formula =  Current.Price ~ Median.Household.Income + Pool.Type + Property.Style.Type
-                 + Beds + Full.Baths + Half.Baths + Heated.Area )
+                 + Beds + Full.Baths + Half.Baths + Heated.Area + Median.Home.Price)
+
+lm_full_model <- lm(data = rental_prop_data, 
+                    formula =  Current.Price ~ Median.Household.Income + Pool.Type + Property.Style.Type
+                    + Beds + Full.Baths + Half.Baths + Heated.Area + Median.Home.Price)
 
 summary(lm_full_model)
 
@@ -83,3 +93,5 @@ get_input_loop <- function() {
     print(predict_rental(house_hold_inc))
   }
 }
+
+get_input_loop()
