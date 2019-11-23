@@ -4,10 +4,11 @@ RUN apt-get update -qq && apt-get install -y \
     libssl-dev \
     libcurl4-gnutls-dev
 
-RUN R -e "install.packages('plumber')"
+RUN R -e "install.packages('plumber')" \
+    echo test
 
 COPY / /
 
 EXPOSE 80
 
-ENTRYPOINT [ "Rscript", "rental_prop_research.R" ]
+ENTRYPOINT [ "Rscript", "main.R" ]

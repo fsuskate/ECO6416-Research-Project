@@ -1,24 +1,7 @@
 # Clear workspace.
 rm(list=ls(all=TRUE))
 
-#install.packages('R.utils')
-#install.packages("plumber")
-
 Sys.setenv(TZ='America/New_York')
-
-##################################################
-# Setting the Parameters
-##################################################
-
-# Set path for working directory.
-# Put files on desktop in a folder called ECO6416
-wd_path <- 'C:/Users/francis_surroca/Documents/ECO6416/Research Project'
-
-# Set the working directory to this path. 
-setwd(wd_path)
-
-# Verify that the path was assigned correctly. 
-getwd()
 
 ##################################################
 # Loading the Data and Conducting Initial Assessment
