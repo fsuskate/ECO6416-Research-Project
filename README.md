@@ -41,3 +41,11 @@ r$run(port=80, host="0.0.0.0")
 <a href="https://img.shields.io/github/followers/fsuskate?label=Follow&style=social" alt="Follow">
         <img src="https://img.shields.io/github/followers/fsuskate" /></a>
 
+<img src="https://img.shields.io/github/commit-activity/w/fsuskate/ECO6416-Research-Project" />
+
+<a href="https://img.shields.io/github/stars/fsuskate/ECO6416-Research-Project?style=social" alt="Star">
+        <img src="https://img.shields.io/github/stars/fsuskate/ECO6416-Research-Project" /></a>
+
+
+
+
